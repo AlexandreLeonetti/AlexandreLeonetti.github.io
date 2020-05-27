@@ -1,0 +1,39 @@
+
+.MusicSquarea{
+	display:block;
+	background-color:white;
+	width:25vw;
+	height:25vw;
+	color:white;
+	margin-left: 60vw ;
+	margin-top:5vw;
+opacity:0.5;
+position:absolute;
+}
+.MusicSquareb{
+	display:block;
+	background-color:white;
+	width:25vw;
+	height:25vw;
+	color:white;
+	margin-left:58vw ;
+	margin-top:6vw;
+opacity:0.5;
+position:absolute;
+}
+.MusicSquarec{
+	display:block;
+	background-color:white;
+	width:25vw;
+	height:25vw;
+	color:white;
+	margin-left: 56vw ;
+	margin-top:7vw;
+opacity:0.5;
+position:absolute;
+}
+.MusicSquarea:hover,.MusicSquareb:hover,.MusicSquarec:hover{
+
+	background-color:#49fcd4;
+
+}
