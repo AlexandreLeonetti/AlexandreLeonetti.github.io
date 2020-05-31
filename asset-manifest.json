@@ -1,36 +1,29 @@
 {
   "files": {
-    "main.css": "/AlexandreLeonetti.github.io/static/css/main.2c2be5f7.chunk.css",
-    "main.js": "/AlexandreLeonetti.github.io/static/js/main.bb2b4bbd.chunk.js",
-    "main.js.map": "/AlexandreLeonetti.github.io/static/js/main.bb2b4bbd.chunk.js.map",
+    "main.css": "/AlexandreLeonetti.github.io/static/css/main.222fc600.chunk.css",
+    "main.js": "/AlexandreLeonetti.github.io/static/js/main.e40aedc4.chunk.js",
+    "main.js.map": "/AlexandreLeonetti.github.io/static/js/main.e40aedc4.chunk.js.map",
     "runtime-main.js": "/AlexandreLeonetti.github.io/static/js/runtime-main.927921be.js",
     "runtime-main.js.map": "/AlexandreLeonetti.github.io/static/js/runtime-main.927921be.js.map",
-    "static/js/2.f3d9c416.chunk.js": "/AlexandreLeonetti.github.io/static/js/2.f3d9c416.chunk.js",
-    "static/js/2.f3d9c416.chunk.js.map": "/AlexandreLeonetti.github.io/static/js/2.f3d9c416.chunk.js.map",
+    "static/js/2.4269e92d.chunk.js": "/AlexandreLeonetti.github.io/static/js/2.4269e92d.chunk.js",
+    "static/js/2.4269e92d.chunk.js.map": "/AlexandreLeonetti.github.io/static/js/2.4269e92d.chunk.js.map",
     "index.html": "/AlexandreLeonetti.github.io/index.html",
-    "precache-manifest.31ed0ff922b85b0de1ce1723fa14c1e6.js": "/AlexandreLeonetti.github.io/precache-manifest.31ed0ff922b85b0de1ce1723fa14c1e6.js",
+    "precache-manifest.e0abb2cb646feba350a28dd5438c5a12.js": "/AlexandreLeonetti.github.io/precache-manifest.e0abb2cb646feba350a28dd5438c5a12.js",
     "service-worker.js": "/AlexandreLeonetti.github.io/service-worker.js",
-    "static/css/main.2c2be5f7.chunk.css.map": "/AlexandreLeonetti.github.io/static/css/main.2c2be5f7.chunk.css.map",
-    "static/js/2.f3d9c416.chunk.js.LICENSE.txt": "/AlexandreLeonetti.github.io/static/js/2.f3d9c416.chunk.js.LICENSE.txt",
+    "static/css/main.222fc600.chunk.css.map": "/AlexandreLeonetti.github.io/static/css/main.222fc600.chunk.css.map",
+    "static/js/2.4269e92d.chunk.js.LICENSE.txt": "/AlexandreLeonetti.github.io/static/js/2.4269e92d.chunk.js.LICENSE.txt",
     "static/media/00.jpg": "/AlexandreLeonetti.github.io/static/media/00.a72264f4.jpg",
-    "static/media/01.jpg": "/AlexandreLeonetti.github.io/static/media/01.74441ecb.jpg",
-    "static/media/02.jpg": "/AlexandreLeonetti.github.io/static/media/02.9b924187.jpg",
-    "static/media/03.jpg": "/AlexandreLeonetti.github.io/static/media/03.2bbbf174.jpg",
-    "static/media/04.jpg": "/AlexandreLeonetti.github.io/static/media/04.286cc311.jpg",
-    "static/media/333.jpg": "/AlexandreLeonetti.github.io/static/media/333.f29629d3.jpg",
     "static/media/link61109.svg": "/AlexandreLeonetti.github.io/static/media/link61109.3e2de65d.svg",
     "static/media/linkgithub-153-675523.webp": "/AlexandreLeonetti.github.io/static/media/linkgithub-153-675523.9624164a.webp",
     "static/media/logo.svg": "/AlexandreLeonetti.github.io/static/media/logo.5d5d9eef.svg",
     "static/media/pay3.png": "/AlexandreLeonetti.github.io/static/media/pay3.a3fbfeba.png",
-    "static/media/product2.jpg": "/AlexandreLeonetti.github.io/static/media/product2.0fc9b4c8.jpg",
     "static/media/rank.png": "/AlexandreLeonetti.github.io/static/media/rank.e9c95fc3.png",
-    "static/media/socialmedia.jpg": "/AlexandreLeonetti.github.io/static/media/socialmedia.c1e4b07e.jpg",
     "static/media/website1.png": "/AlexandreLeonetti.github.io/static/media/website1.2267cea5.png"
   },
   "entrypoints": [
     "static/js/runtime-main.927921be.js",
-    "static/js/2.f3d9c416.chunk.js",
-    "static/css/main.2c2be5f7.chunk.css",
-    "static/js/main.bb2b4bbd.chunk.js"
+    "static/js/2.4269e92d.chunk.js",
+    "static/css/main.222fc600.chunk.css",
+    "static/js/main.e40aedc4.chunk.js"
   ]
 }
