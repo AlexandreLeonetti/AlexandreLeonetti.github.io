@@ -5,21 +5,22 @@ const TextContent = () => {
     zIndex: 8,
     position:"relative",
       color:"white",
+      marginTop:'-10%',
+      fontWeight:'800',
+      color:"#eb4a4c",
+      fontSize:"2em"
+
   };
+   const white = {
+       color:"white",
+   };
 
   return (
     <div className="TextContent" style={zIdx}>
       <p >
-        ALEX, SENIOR WEB DEVELOPER
+        ALEX, <span style={white}>SENIOR WEB DEVELOPER</span>
       </p>
-      <a 
-        color="white"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
+      
     </div>
   );
 };

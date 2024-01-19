@@ -20,6 +20,9 @@ body {
 
 .TextContent{
     z-index:2;
+    height:100vh;
+    display:grid;
+    place-items:center;
 }
 
 a {
