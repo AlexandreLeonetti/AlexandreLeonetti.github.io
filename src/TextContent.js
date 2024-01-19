@@ -3,15 +3,17 @@ import React from 'react';
 const TextContent = () => {
   const zIdx = {
     zIndex: 8,
+    position:"relative",
+      color:"white",
   };
 
   return (
-    <div style={zIdx}>
-      <p>
+    <div className="TextContent" style={zIdx}>
+      <p >
         ALEX, SENIOR WEB DEVELOPER
       </p>
-      <a
-        className="App-link"
+      <a 
+        color="white"
         href="https://reactjs.org"
         target="_blank"
         rel="noopener noreferrer"

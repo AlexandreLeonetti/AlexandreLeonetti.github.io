@@ -1,115 +1,114 @@
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-// import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+import * as THREE from "three";
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
+import {Canvas, useFrame, useLoader,extend} from "@react-three/fiber";
+import circleImg from "./assets/circle.png";
+import { Suspense, useCallback, useMemo, useRef } from 'react';
+extend({OrbitControls})
 
-const Background = () => {
-  const [init, setInit] = useState(false);
+function Points() {
+/* credits https://www.youtube.com/watch?app=desktop&v=wRmeFtRkF-8 */
+  const imgTex = useLoader(THREE.TextureLoader, circleImg);
+      const bufferRef = useRef();
 
-  // this should be run only once per application lifetime
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
-      await loadSlim(engine);
-      //await loadBasic(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
+      let t = 0;
+      let f = 0.001;
+      let a = 2;
+      const graph = useCallback((x, z) => {
+              return Math.sin(f * (x ** 2 + z ** 2 + t)) * a;
+            }, [t, f, a])
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
+      const count = 100
+      const sep = 3
+      let positions = useMemo(() => {
+              let positions = []
 
-  const options = useMemo(
-    () => ({
-      background: {
-        color: {
-          value: "#0b2d39",
-        },
-      },
-      fpsLimit: 120,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: "push",
-          },
-          onHover: {
-            enable: true,
-            mode: "repulse",
-          },
-        },
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
-          },
-        },
-      },
-      particles: {
-        color: {
-          value: "#e9f5f9",
-        },
-        links: {
-          color: "#e9f5f9",
-          distance: 150,
-          enable: true,
-          opacity: 0.5,
-          width: 1,
-        },
-        move: {
-          direction: "none",
-          enable: true,
-          outModes: {
-            default: "bounce",
-          },
-          random: false,
-          speed: 1,
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: true,
-          },
-          value: 80,
-        },
-        opacity: {
-          value: 0.5,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: { min: 1, max: 5 },
-        },
-      },
-      detectRetina: true,
-    }),
-    [],
-  );
+              for (let xi = 0; xi < count; xi++) {
+                        for (let zi = 0; zi < count; zi++) {
+                                    let x = sep * (xi - count / 2);
+                                    let z = sep * (zi - count / 2);
+                                    let y = graph(x, z);
+                                    positions.push(x, y, z);
+                                  }
+                      }
 
-  if (init) {
+
+              return new Float32Array(positions);
+            }, [count, sep, graph])
+
+  useFrame(() => {
+          t += 15
+          
+          const positions = bufferRef.current.array;
+
+          let i = 0;
+          for (let xi = 0; xi < count; xi++) {
+                    for (let zi = 0; zi < count; zi++) {
+                                let x = sep * (xi - count / 2);
+                                let z = sep * (zi - count / 2);
+
+                                positions[i + 1] = graph(x, z);
+                                i += 3;
+                              }
+                  }
+
+          bufferRef.current.needsUpdate = true;
+        })
+
+
     return (
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />
+            <points>
+              <bufferGeometry attach="geometry">
+                <bufferAttribute
+                  ref={bufferRef}
+                  attach = 'attributes-position'
+                  array={positions}
+                  count={positions.length / 3}
+                  itemSize={3}
+                />
+              </bufferGeometry>
+
+              <pointsMaterial
+                attach="material"
+                map={imgTex}
+                color={0x00AAFF}
+                size={0.5}
+                sizeAttenuation
+                transparent={false}
+                alphaTest={0.5}
+                opacity={1.0}
+              />
+            </points>
+          );
+}
+function AnimationCanvas(){
+
+    return(
+        <Canvas
+              colorManagement={false}
+              camera={{ position: [100, 10, 0], fov: 75 }}
+        >
+              <Suspense fallback={null}>
+                <Points />
+              </Suspense>
+        </Canvas>
     );
-  }
+}
 
-  return <></>;
-};
 
+
+function Background(){
+    return(
+        <div className="anim">
+            <Suspense>
+                <AnimationCanvas/>
+            </Suspense>
+        </div>
+    );
+}
 
 export default Background;
+
+
+
+
+
