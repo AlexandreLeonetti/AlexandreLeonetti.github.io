@@ -5,11 +5,13 @@ const TextContent = () => {
     zIndex: 8,
     position:"relative",
       color:"white",
-      marginTop:'-10%',
       fontWeight:'800',
       color:"#eb4a4c",
-      fontSize:"2em"
-
+/*      fontSize:"2em",
+      marginTop:'-10%',
+      "@media (minWidth: 920px)": {
+        fontSize: "4em",
+      }*/
   };
    const white = {
        color:"white",
