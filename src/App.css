@@ -29,6 +29,10 @@ body {
          font-size:1em;
          margin-top:-20%;
     }
+    @media (max-width:400px){
+         font-size:1em;
+         margin-top:-30%;
+    }
 }
 a {
     color:white;
