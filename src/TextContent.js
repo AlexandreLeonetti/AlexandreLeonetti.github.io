@@ -4,10 +4,9 @@ const TextContent = () => {
   const zIdx = {
     zIndex: 8,
     position:"relative",
-      color:"white",
       fontWeight:'800',
-      color:"#eb4a4c",
 /*      fontSize:"2em",
+      color:"#eb4a4c",
       marginTop:'-10%',
       "@media (minWidth: 920px)": {
         fontSize: "4em",

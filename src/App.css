@@ -23,18 +23,23 @@ body {
     height:100vh;
     display:grid;
     place-items:center;
-    font-size:2em;
+    font-size:3em;
     margin-top:-10%;
-    @media (max-width:1000px){
-         font-size:1em;
-         margin-top:-20%;
-    }
-    @media (max-width:400px){
-         font-size:1em;
-         margin-top:-30%;
-    }
+        color:#eb4a4c;
 }
 a {
     color:white;
+}
+@media (max-width:600px){
+        .TextContent{
+        font-size:1em;
+        margin-top:-30%;
+        }
+}
+@media (min-width:601px) and (max-width:1000px){
+        .TextContent{
+        font-size:2em;
+        margin-top:-20%;
+        }
 }
 
