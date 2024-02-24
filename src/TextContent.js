@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TextContent = () => {
   const zIdx = {
@@ -19,7 +20,11 @@ const TextContent = () => {
   return (
     <div className="TextContent" style={zIdx}>
       <p >
+      <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to="/second">
         ALEX, <span style={white}>SENIOR WEB DEVELOPER</span>
+
+
+      </Link>
       </p>
       
     </div>
