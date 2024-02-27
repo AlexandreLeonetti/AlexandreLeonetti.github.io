@@ -15,7 +15,7 @@ function App() {
 <Router>
     <div className="App" >
         <Helmet>
-            <title>test</title>
+            <title>A. Leonetti</title>
       <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
         </Helmet>
 

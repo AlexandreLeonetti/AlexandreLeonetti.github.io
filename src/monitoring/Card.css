@@ -1,0 +1,12 @@
+.card {
+      padding: 20px;
+        border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+
+      .data-element {
+            padding: 10px;
+              margin-bottom: 10px;
+                color: #fff;
+            }
+

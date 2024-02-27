@@ -1,0 +1,6 @@
+.grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust column size as needed */
+      grid-gap: 20px; /* Adjust gap between grid items as needed */
+}
+

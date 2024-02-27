@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Card from "./Card";
+import './Monitoring.css';
 
 const Monitoring= () => {
   const [data, setData] = useState(null);
@@ -7,14 +9,16 @@ const Monitoring= () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://16.170.155.76:5000/daysig');
-        const jsonData = await response.json();
-        setData(jsonData);
-        let latest  = await fetch('http://16.170.155.76:5000/history');
+        //const response = await fetch('http://16.170.155.76:5000/daysig');
+        //const jsonData = await response.json();
+        //setData(jsonData);
+        //let latest  = await fetch('http://16.170.155.76:5000/history');
+        let latest    = await fetch('https://worldmathranking.com/api/mongo');
         latest = await latest.json();
         latest = latest[latest.length-1];
         latest = parseFloat(latest);
-        setLastPrice(latest);
+        let testArr = [latest,latest,latest,latest,latest];
+        setLastPrice(testArr);
 
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -25,23 +29,10 @@ const Monitoring= () => {
   }, []);
 
   return (
-    <div>
-      {data && (
-        <div>
-          <div style={{ backgroundColor: lastPrice / data.ma10 * 100 - 100 > 0 ? '#1B9786' : '#971B2C', padding: '10px', margin: '0px' }}>
-            ma10: {(lastPrice/data.ma10)*100 -100}
-          </div>
-           <div style={{ backgroundColor: lastPrice / data.ma25 * 100 - 100 > 0 ? '#1B9786' : '#971B2C', padding: '10px', margin: '0px' }}>
-            ma25: {(lastPrice/data.ma25)*100 -100}
-          </div>
-            <div style={{ backgroundColor: lastPrice / data.ma50 * 100 - 100 > 0 ? '#1B9786' : '#971B2C', padding: '10px', margin: '0px' }}>
-            ma50: {(lastPrice/data.ma50)*100 -100}
-          </div>
-             <div style={{ backgroundColor: lastPrice / data.ma100 * 100 - 100 > 0 ? '#1B9786' : '#971B2C', padding: '10px', margin: '0px' }}>
-            ma100: {(lastPrice/data.ma100)*100 -100}
-          </div>
-        </div>
-      )}
+    <div className="grid-container">
+            {lastPrice && lastPrice.map((currency, index) => (
+                        <Card key={index} data={data} lastPrice={currency} />
+            ))}
     </div>
   );
 };
