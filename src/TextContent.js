@@ -20,7 +20,7 @@ const TextContent = () => {
   return (
     <div className="TextContent" style={zIdx}>
       <p >
-      <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to="/second">
+      <Link style={{ color: 'inherit', textDecoration: 'inherit'}} to="https://www.linkedin.com/in/alexandre-leonetti/">
         ALEX, <span style={white}>SENIOR WEB DEVELOPER</span>
 
 
